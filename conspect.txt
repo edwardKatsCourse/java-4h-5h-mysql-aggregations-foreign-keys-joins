@@ -1,0 +1,51 @@
+1. aggregational operations
+
+
+2. foreign key
+- create
+- joins
+
+
+3. constraints
+- unique
+- index
+- not null
+- foreign key
+
+
+CAR						DRIVER
+1,toyota				1,john doe
+						2,anna dale
+
+CAR_DRIVER ---> запись о том, что проихошла аренда
+id, car_id (FK), driver_id (FK)
+1	  1		      2
+2     1           1
+3	  1           15		----> foreign key
+
+при insert mysql проверит, что запись с таким ID сущестует в другой таблице
+cascade types - что случится с CAR_DRIVER, если Аню удалят/обновят из DRIVER
+- оставить как есть
+- удалить из CAR_DRIVER | обновить запись в CAR_DRIVER
+- запретить удалять | обновлять Аню, пока существуют записи в CAR_DRIVER
+
+
+source_table -> source_field -> destination_table -> destination_field
+
+CAR				ID					CAR_DRIVER			car_id
+
+car_id_car_driver_car_id
+driver_id_car_driver_driver_id
+
+
+
+
+
+
+STUDENT				COURSE
+STUDENT_COURSE
+
+
+REAL_ESTATE			OWNER
+
+REAL_ESTATE_OWNER
